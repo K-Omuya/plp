@@ -1,0 +1,172 @@
+<!-- portfolio_app/templates/about.html -->
+{% extends 'base.html' %}
+
+{% block title %}About Me | My Portfolio{% endblock %}
+
+{% block content %}
+        <!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">
+            {{ page_title|default:"About Me" }}
+        </h4>
+        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item active text-primary">About Me</li>
+        </ol>
+    </div>
+</div>
+   <style>
+
+        .about-me {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #FF8200;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 30%;
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: #004080;
+            font-size: 1.5em;
+        }
+
+        .card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .card ul li {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .card .testimonial {
+            font-style: italic;
+            color: #555;
+        }
+
+        .card .btn {
+            background-color: #FF8200;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .social-links a {
+            color: #FF8200;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer {
+            background-color: #004080;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="about-me">
+        <div class="profile-image">
+            <img src="[path-to-your-image.jpg]" alt="Simon Otieno">
+        </div>
+        <h2>Hello! I'm Simon Otieno</h2>
+        <p>I am a passionate and driven professional currently in my final year of pursuing a <strong>Bachelor of Science with Education</strong> in <strong>Mathematics and Physics</strong> at <strong>Karatina University</strong>. I also completed a <strong>Web Development course</strong> with the <strong>eMobilis Institute of Technology</strong>, where I honed my skills in creating dynamic websites using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
+
+        <h3>Career Path & Aspirations</h3>
+        <p>As a <strong>fourth-year student</strong> with a solid foundation in <strong>Mathematics</strong> and <strong>Physics</strong>, my career goal is to become a <strong>Math and Physics teacher</strong>, inspiring students to appreciate and explore the world of science. I also aspire to apply my <strong>web development</strong> skills to create educational platforms that enhance learning experiences in <strong>STEM (Science, Technology, Engineering, and Mathematics)</strong> fields.</p>
+        <p>With my unique blend of expertise in both <strong>education</strong> and <strong>technology</strong>, I aim to contribute to the <strong>EdTech</strong> industry by developing <strong>interactive learning platforms</strong> and <strong>web applications</strong> that make learning <strong>Math</strong> and <strong>Physics</strong> more engaging and accessible.</p>
+
+        <div class="card-container">
+            <!-- Skills Card -->
+            <div class="card">
+                <h3>Skills</h3>
+                <ul>
+                    <li><strong>HTML/CSS:</strong> <progress value="80" max="100"></progress> 80%</li>
+                    <li><strong>JavaScript:</strong> <progress value="70" max="100"></progress> 70%</li>
+                    <li><strong>Python:</strong> <progress value="75" max="100"></progress> 75%</li>
+                    <li><strong>Communication:</strong> <progress value="90" max="100"></progress> 90%</li>
+                </ul>
+            </div>
+
+            <!-- Career Journey Card -->
+            <div class="card">
+                <h3>Career Journey</h3>
+                <ul>
+                    <li><strong>2025:</strong> Started at Olkejuado High as Teacher On Practice.</li>
+                    <li><strong>2022:</strong> Internship at Codsoft, worked on Company Project.</li>
+                </ul>
+            </div>
+
+            <!-- Testimonials Card -->
+            <div class="card">
+                <h3>What Others Say</h3>
+                <blockquote class="testimonial">
+                    "An exceptional professional with great attention to detail." – Jackson Kasaine, Snr Principal
+                </blockquote>
+                <blockquote class="testimonial">
+                    "A highly skilled individual with a passion for excellence." – Maurice Owuor, DOS
+                </blockquote>
+            </div>
+        </div>
+        <br>
+       <a href="documents/Simon_Otieno_CV.pdf" download class="btn"
+   style="background-color: #FF8200; color: white; padding: 15px 30px; font-size: 16px;
+          text-decoration: none; border-radius: 5px; text-align: center; display: inline-block;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: background-color 0.3s, transform 0.3s;">
+    Download My CV
+</a>
+    </div>
+</div>
+{% endblock %}
