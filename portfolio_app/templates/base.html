@@ -1,113 +1,261 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Simon Otieno Omuya</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Simon Otieno Omuya</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
 
-  <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+    <style>
+        :root {
+            --background-color: #ffffff;
+            --default-color: #0a0f14;
+            --heading-color: #0f2943;
+            --accent-color: #e87532;
+            --surface-color: #ffffff;
+            --contrast-color: #ffffff;
+        }
+
+        body {
+            font-family: var(--default-font);
+            background-color: var(--background-color);
+            color: var(--default-color);
+            margin-bottom: 100px; /* Adds space for the fixed footer */
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #0f2943, #e87532);
+            color: var(--contrast-color);
+            padding: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            color: var(--contrast-color);
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+        }
+
+        header nav ul li {
+            padding: 10px;
+        }
+
+        header nav ul li a {
+            color: var(--contrast-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        header nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #0f2943;
+            color: var(--contrast-color);
+            padding: 30px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        footer .social-links a {
+            color: var(--contrast-color);
+            margin: 0 15px;
+            font-size: 20px;
+        }
+
+        footer .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        footer .copyright p {
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        footer .credits a {
+            color: var(--contrast-color);
+        }
+
+        footer .credits a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Scroll Top Button */
+        #scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: var(--contrast-color);
+            padding: 10px 15px;
+            border-radius: 50%;
+            display: none;
+            z-index: 999;
+        }
+
+        #scroll-top:hover {
+            background-color: var(--default-color);
+        }
+    </style>
 </head>
 
 <body class="index-page">
 
-  <!-- Header -->
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    <!-- Header -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+            <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+                <h1 class="sitename">Simon Otieno Omuya</h1>
+            </a>
 
-      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="sitename">Simon Otieno Omuya</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="{% url 'home' %}" class="active">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'resume' %}">Resume</a></li>
-          <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-          <li><a href="{% url 'services' %}">Services</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <nav id="navmenu" class="navmenu">
                 <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
+                    <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'resume' %}">Resume</a></li>
+                    <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'document_list' %}">My Docs</a></li>
+                    <li><a href="{% url 'upload_document' %}">Upload</a></li>
                 </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="{% url 'contact' %}">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
 
-      <div class="header-social-links">
-        <a href="https://twitter.com/Omuya_K_Omuya" target="_blank"><i class="bi bi-twitter"></i></a>
-        <a href="https://www.facebook.com/omuyakomuya" target="_blank"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/omuyakomuya/" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/simon-otieno-omunya/" target="_blank"><i class="bi bi-linkedin"></i></a>
-      </div>
+            <div class="header-social-links">
+                <a href="https://twitter.com/Omuya_K_Omuya" target="_blank"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.facebook.com/omuyakomuya" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/omuyakomuya/" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/simon-otieno-omunya/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
 
-    </div>
-  </header>
-
-  <!-- Main Content Block -->
-  {% block content %}
-  {% endblock %}
-
-  <!-- Footer -->
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Simon Otieno Omuya</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://twitter.com/Omuya_K_Omuya" target="_blank"><i class="bi bi-twitter"></i></a>
-        <a href="https://www.facebook.com/omuyakomuya" target="_blank"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/omuyakomuya/" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/simon-otieno-omunya/" target="_blank"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>
-      </div>
-    </div>
-  </footer>
-
+    <!-- Main Content Block -->
+    {% block content %}
+    {% endblock %}
   <!-- Scroll Top Button -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
 
-  <!-- Vendor JS Files -->
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'assets/js/main.js' %}"></script>
+<!-- Footer -->
+<footer id="footer" class="footer" style="background: linear-gradient(135deg, #0f2943, #e87532); padding: 30px 0; color: #fff; position: relative; z-index: 10;">
+    <div class="container">
+        <div class="copyright text-center">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Simon Otieno Omuya</strong> <span>All Rights Reserved</span></p>
+        </div>
+        <div class="social-links d-flex justify-content-center">
+            <a href="https://twitter.com/Omuya_K_Omuya" target="_blank" style="color: #fff; margin: 0 15px;">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/omuyakomuya" target="_blank" style="color: #fff; margin: 0 15px;">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/omuyakomuya/" target="_blank" style="color: #fff; margin: 0 15px;">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/simon-otieno-omunya/" target="_blank" style="color: #fff; margin: 0 15px;">
+                <i class="bi bi-linkedin"></i>
+            </a>
+        </div>
+        <div class="credits text-center mt-3">
+            Designed by <a href="mailto:simonotienoomuya@gmail.com" target="_blank" style="color: #fff;">Simon Otieno</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+<!-- Scroll to Top Button Script -->
+<script>
+  // Scroll to Top Button functionality
+  document.getElementById("scroll-top").addEventListener("click", function(e) {
+      e.preventDefault();
+      window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+      });
+  });
+
+  // Show/Hide Scroll Top Button based on scroll position
+  window.onscroll = function() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          document.getElementById("scroll-top").style.display = "flex";
+      } else {
+          document.getElementById("scroll-top").style.display = "none";
+      }
+  };
+</script>
+
+<!-- Make sure there's no white space after footer -->
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4f63b1;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    z-index: 100;
+  }
+</style>
 
 </body>
-
 </html>

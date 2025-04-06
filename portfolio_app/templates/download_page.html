@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}Download Documents{% endblock %}
+
+{% block content %}
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center mb-4">Download My Documents</h1>
+                <p class="text-center">Click the links below to download the documents or preview them online.</p>
+
+                <!-- Search bar for filtering documents -->
+                <div class="mb-4">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search documents..." onkeyup="searchDocuments()">
+                </div>
+
+                <!-- Document list -->
+                <div class="document-list">
+                    <ul id="documentList" class="list-group">
+                        {% for document in documents %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5>{{ document.title }}</h5>
+                                    <small>{{ document.file_type }}</small>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary" onclick="previewFile('{{ document.file.name }}')">Preview</button>
+                                    <a href="{% url 'download_file' document.file.name %}" class="btn btn-primary">Download</a>
+                                </div>
+                            </li>
+                        {% empty %}
+                            <li class="list-group-item">No documents available.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Preview -->
+    <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="previewModalLabel">Document Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Embedded preview for PDF, can be customized based on document type -->
+                    <embed id="filePreview" src="" type="application/pdf" width="100%" height="500px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        // Function to search documents
+        function searchDocuments() {
+            let input = document.getElementById("searchInput");
+            let filter = input.value.toLowerCase();
+            let list = document.getElementById("documentList");
+            let items = list.getElementsByTagName("li");
+
+            for (let i = 0; i < items.length; i++) {
+                let title = items[i].getElementsByTagName("h5")[0];
+                if (title) {
+                    let textValue = title.textContent || title.innerText;
+                    if (textValue.toLowerCase().indexOf(filter) > -1) {
+                        items[i].style.display = "";
+                    } else {
+                        items[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        // Function to preview files
+        function previewFile(filename) {
+            // Assuming we only handle PDF previews here, you can adjust this for other file types
+            const previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
+            const filePreview = document.getElementById('filePreview');
+
+            // Set the source for the preview (adjust for different file types as needed)
+            filePreview.src = "{% url 'download_file' '' %}".replace("''", filename);
+            previewModal.show();
+        }
+    </script>
+{% endblock %}
