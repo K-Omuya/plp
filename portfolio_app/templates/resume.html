@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <!-- Resume Section -->
+  <section id="resume" class="resume section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Resume</h2>
+      <div class="title-shape">
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
+        </svg>
+      </div>
+      <p>Explore my educational journey and work experience in the fields of web development, AI, and education.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row">
+        <div class="col-12">
+          <div class="resume-wrapper">
+
+            <!-- Work Experience -->
+            <div class="resume-block" data-aos="fade-up">
+              <h2>Work Experience</h2>
+              <p class="lead">I have worked in various roles, ranging from teaching to web development and AI, where I have contributed to creating meaningful solutions.</p>
+
+              <div class="timeline">
+                <!-- Timeline Items: Work Experience (Add more items as needed) -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                  <div class="timeline-left">
+                    <h4 class="company">Artificial Intelligence Intern</h4>
+                    <span class="period">Jan 2025 - Feb 2025</span>
+                  </div>
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-right">
+                    <h3 class="position">AI Intern</h3>
+                    <p class="description">Worked on AI projects, including image captioning, face detection, and recommendation systems.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                  <div class="timeline-left">
+                    <h4 class="company">Teacher on Practice</h4>
+                    <span class="period">May 2024 - Aug 2024</span>
+                  </div>
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-right">
+                    <h3 class="position">Physics & Mathematics Teacher</h3>
+                    <p class="description">Taught physics and mathematics to secondary school students, applying innovative teaching methods.</p>
+                  </div>
+                </div>
+                <!-- Add more timeline items for work experience as needed -->
+              </div>
+            </div>
+
+            <!-- Education -->
+            <div class="resume-block" data-aos="fade-up" data-aos-delay="100">
+              <h2>Education</h2>
+              <p class="lead">My educational background focuses on a blend of physics, mathematics, and technology, equipping me with diverse skills.</p>
+
+              <div class="timeline">
+                <!-- Timeline Items: Education -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                  <div class="timeline-left">
+                    <h4 class="company">Karatina University</h4>
+                    <span class="period">2021 - Present</span>
+                  </div>
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-right">
+                    <h3 class="position">Bachelor of Science with Education</h3>
+                    <p class="description">Currently pursuing a degree in physics with a minor in mathematics. Expected graduation in 2025.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                  <div class="timeline-left">
+                    <h4 class="company">eMobilis Institute of Technology</h4>
+                    <span class="period">Aug 2024 - Dec 2024</span>
+                  </div>
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-right">
+                    <h3 class="position">Website Development Certificate</h3>
+                    <p class="description">Completed a certificate in website development, focusing on front-end and back-end development technologies.</p>
+                  </div>
+                </div>
+                <!-- Add more timeline items for education as needed -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section><!-- /Resume Section -->
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Portfolio</h2>
+      <div class="title-shape">
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
+        </svg>
+      </div>
+      <p>Explore my work in web development, artificial intelligence, and graphic design. Below are some of the projects I've worked on.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+        <div class="portfolio-filters-container" data-aos="fade-up" data-aos-delay="200">
+          <ul class="portfolio-filters isotope-filters">
+            <li data-filter="*" class="filter-active">All Work</li>
+            <li data-filter=".filter-web">Web Design</li>
+            <li data-filter=".filter-graphics">Graphics</li>
+            <li data-filter=".filter-ai">AI Projects</li>
+          </ul>
+        </div>
+
+        <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+          <!-- Web Design Project 1 -->
+          <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-web">
+            <div class="portfolio-card">
+              <div class="portfolio-image">
+                <img src="assets/img/portfolio/portfolio-1.webp" class="img-fluid" alt="" loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-actions">
+                    <a href="assets/img/portfolio/portfolio-1.webp" class="glightbox preview-link" data-gallery="portfolio-gallery-web"><i class="bi bi-eye"></i></a>
+                    <a href="portfolio-details.html" class="details-link"><i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <span class="category">Web Design</span>
+                <h3>Modern Dashboard Interface</h3>
+                <p>An interactive and user-friendly dashboard built with HTML, CSS, and JavaScript.</p>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <!-- AI Project -->
+          <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-ai">
+            <div class="portfolio-card">
+              <div class="portfolio-image">
+                <img src="assets/img/portfolio/portfolio-ai-1.webp" class="img-fluid" alt="" loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-actions">
+                    <a href="assets/img/portfolio/portfolio-ai-1.webp" class="glightbox preview-link" data-gallery="portfolio-gallery-ai"><i class="bi bi-eye"></i></a>
+                    <a href="portfolio-details.html" class="details-link"><i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <span class="category">AI Projects</span>
+                <h3>Image Captioning AI</h3>
+                <p>Developed an AI model that automatically generates captions for images using Python and TensorFlow.</p>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+        </div><!-- End Portfolio Container -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Portfolio Section -->
+
+{% endblock %}
+

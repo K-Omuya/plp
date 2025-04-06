@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials section light-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Testimonials</h2>
+      <div class="title-shape">
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
+        </svg>
+      </div>
+      <p>Here's what colleagues and mentors have to say about my work and contributions in education, AI, and web development.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="testimonials-slider swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "slidesPerView": 1,
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "navigation": {
+              "nextEl": ".swiper-button-next",
+              "prevEl": ".swiper-button-prev"
+            }
+          }
+        </script>
+
+        <div class="swiper-wrapper">
+
+          <!-- Testimonial 1 -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2>Exceptional AI Intern</h2>
+                  <p>
+                    Simon's contributions to our AI projects, including the image captioning and face recognition systems, were invaluable. His ability to translate complex concepts into practical solutions is remarkable.
+                  </p>
+                  <p>
+                    His technical skills, combined with his passion for innovation, make him a standout individual. Simon's professionalism and creativity have consistently exceeded our expectations.
+                  </p>
+                  <div class="profile d-flex align-items-center">
+                    <img src="assets/img/person/person-m-7.webp" class="profile-img" alt="">
+                    <div class="profile-info">
+                      <h3>Jane Doe</h3>
+                      <span>AI Project Manager</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                  <div class="featured-img-wrapper">
+                    <img src="assets/img/person/person-m-7.webp" class="featured-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+          <!-- Testimonial 2 -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2>Outstanding Educator and Developer</h2>
+                  <p>
+                    Simon’s teaching approach is innovative, blending his technical expertise with an empathetic and engaging style. He’s not just a skilled web developer but also an excellent mentor.
+                  </p>
+                  <p>
+                    His web development skills have greatly contributed to the success of the projects, while his insights into AI and its integration into real-world applications were truly insightful.
+                  </p>
+                  <div class="profile d-flex align-items-center">
+                    <img src="assets/img/person/person-f-8.webp" class="profile-img" alt="">
+                    <div class="profile-info">
+                      <h3>John Smith</h3>
+                      <span>Senior Developer, Olkejuado High School</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                  <div class="featured-img-wrapper">
+                    <img src="assets/img/person/person-f-8.webp" class="featured-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+          <!-- Testimonial 3 -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2>Innovative Solutions with Web Design</h2>
+                  <p>
+                    Simon’s work on our e-commerce platform was top-notch. He not only brought a high level of expertise in design but also ensured the technical backend was user-friendly and secure.
+                  </p>
+                  <p>
+                    His attention to detail and user experience-driven approach resulted in an intuitive, responsive platform that has greatly improved our online presence.
+                  </p>
+                  <div class="profile d-flex align-items-center">
+                    <img src="assets/img/person/person-m-9.webp" class="profile-img" alt="">
+                    <div class="profile-info">
+                      <h3>Emily Roberts</h3>
+                      <span>CEO, Startup Co.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                  <div class="featured-img-wrapper">
+                    <img src="assets/img/person/person-m-9.webp" class="featured-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+          <!-- Testimonial 4 -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2>Collaborative and Skilled Professional</h2>
+                  <p>
+                    Simon is a natural problem-solver who thrives in collaborative environments. His willingness to tackle challenges head-on and his ability to collaborate across various teams has been invaluable.
+                  </p>
+                  <p>
+                    His contributions to various web and AI development projects have been impressive, and his commitment to excellence is evident in every task he undertakes.
+                  </p>
+                  <div class="profile d-flex align-items-center">
+                    <img src="assets/img/person/person-f-10.webp" class="profile-img" alt="">
+                    <div class="profile-info">
+                      <h3>Michael Taylor</h3>
+                      <span>Project Lead, Serawongo Mixed Secondary</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                  <div class="featured-img-wrapper">
+                    <img src="assets/img/person/person-f-10.webp" class="featured-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+        </div>
+
+        <div class="swiper-navigation w-100 d-flex align-items-center justify-content-center">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- /Testimonials Section -->
+
+{% endblock %}

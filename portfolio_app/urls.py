@@ -1,9 +1,12 @@
-# portfolio/portfolio_app/urls.py
 from django.urls import path
 from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
+    path('resume/', views.resume, name='resume'),
+    path('portfolio/', views.portfolio, name='portfolio'),
+    path('services/', views.services, name='services'),
+    path('dropdown/', views.dropdown, name='dropdown'),
     path('contact/', views.contact, name='contact'),
 ]

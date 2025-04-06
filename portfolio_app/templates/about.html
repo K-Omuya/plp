@@ -1,172 +1,157 @@
-<!-- portfolio_app/templates/about.html -->
 {% extends 'base.html' %}
-
-{% block title %}About Me | My Portfolio{% endblock %}
-
+{% load static %}
 {% block content %}
-        <!-- Header Start -->
-<div class="container-fluid bg-breadcrumb">
-    <div class="container text-center py-5" style="max-width: 900px;">
-        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">
-            {{ page_title|default:"About Me" }}
-        </h4>
-        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-primary">About Me</li>
-        </ol>
-    </div>
-</div>
-   <style>
+  <!-- About Section -->
+  <section id="about" class="about section light-background">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>About</h2>
+      <div class="title-shape">
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
+        </svg>
+      </div>
+      <p>Passionate about education, web development, and artificial intelligence, I am constantly striving to blend technology with meaningful impact.</p>
+    </div><!-- End Section Title -->
 
-        .about-me {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .profile-image img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid #FF8200;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
-            margin-top: 40px;
-        }
-
-        .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 30%;
-            box-sizing: border-box;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card h3 {
-            color: #004080;
-            font-size: 1.5em;
-        }
-
-        .card ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .card ul li {
-            margin: 10px 0;
-            font-size: 1.1em;
-        }
-
-        .card .testimonial {
-            font-style: italic;
-            color: #555;
-        }
-
-        .card .btn {
-            background-color: #FF8200;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            text-align: center;
-            display: inline-block;
-        }
-
-        .social-links a {
-            color: #FF8200;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer {
-            background-color: #004080;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            .card-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .card {
-                width: 80%;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <div class="about-me">
-        <div class="profile-image">
-            <img src="[path-to-your-image.jpg]" alt="Simon Otieno">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row align-items-center">
+        <div class="col-lg-6 position-relative" data-aos="fade-right" data-aos-delay="200">
+          <div class="about-image">
+            <img src="{% static 'img/profile/about.jpg' %}" alt="Profile Image" class="img-fluid rounded-4">
+          </div>
         </div>
-        <h2>Hello! I'm Simon Otieno</h2>
-        <p>I am a passionate and driven professional currently in my final year of pursuing a <strong>Bachelor of Science with Education</strong> in <strong>Mathematics and Physics</strong> at <strong>Karatina University</strong>. I also completed a <strong>Web Development course</strong> with the <strong>eMobilis Institute of Technology</strong>, where I honed my skills in creating dynamic websites using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
 
-        <h3>Career Path & Aspirations</h3>
-        <p>As a <strong>fourth-year student</strong> with a solid foundation in <strong>Mathematics</strong> and <strong>Physics</strong>, my career goal is to become a <strong>Math and Physics teacher</strong>, inspiring students to appreciate and explore the world of science. I also aspire to apply my <strong>web development</strong> skills to create educational platforms that enhance learning experiences in <strong>STEM (Science, Technology, Engineering, and Mathematics)</strong> fields.</p>
-        <p>With my unique blend of expertise in both <strong>education</strong> and <strong>technology</strong>, I aim to contribute to the <strong>EdTech</strong> industry by developing <strong>interactive learning platforms</strong> and <strong>web applications</strong> that make learning <strong>Math</strong> and <strong>Physics</strong> more engaging and accessible.</p>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+          <div class="about-content">
+            <span class="subtitle">About Me</span>
 
-        <div class="card-container">
-            <!-- Skills Card -->
-            <div class="card">
-                <h3>Skills</h3>
-                <ul>
-                    <li><strong>HTML/CSS:</strong> <progress value="80" max="100"></progress> 80%</li>
-                    <li><strong>JavaScript:</strong> <progress value="70" max="100"></progress> 70%</li>
-                    <li><strong>Python:</strong> <progress value="75" max="100"></progress> 75%</li>
-                    <li><strong>Communication:</strong> <progress value="90" max="100"></progress> 90%</li>
-                </ul>
+            <h2>Physics Major | Web Developer | AI Enthusiast</h2>
+
+            <p class="lead mb-4">I am a fourth-year student at Karatina University pursuing a Bachelor of Science with Education in Physics and Mathematics. My passion lies in creating solutions that blend technology and education to solve real-world problems.</p>
+
+            <p class="mb-4">With experience in web development, artificial intelligence, and graphic design, I constantly seek opportunities to enhance my skills and contribute to innovative projects.</p>
+
+            <div class="personal-info">
+              <div class="row g-4">
+                <div class="col-6">
+                  <div class="info-item">
+                    <span class="label">Name</span>
+                    <span class="value">Simon Otieno Omuya</span>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="info-item">
+                    <span class="label">Phone</span>
+                    <span class="value">+254 114 159 302</span>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="info-item">
+                    <span class="label">Age</span>
+                    <span class="value">24 Years</span>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="info-item">
+                    <span class="label">Email</span>
+                    <span class="value">simonotienoomuya@gmail.com</span>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="info-item">
+                    <span class="label">Occupation</span>
+                    <span class="value">Student & Web Developer</span>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="info-item">
+                    <span class="label">Nationality</span>
+                    <span class="value">Kenyan</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <!-- Career Journey Card -->
-            <div class="card">
-                <h3>Career Journey</h3>
-                <ul>
-                    <li><strong>2025:</strong> Started at Olkejuado High as Teacher On Practice.</li>
-                    <li><strong>2022:</strong> Internship at Codsoft, worked on Company Project.</li>
-                </ul>
+            <div class="signature mt-4">
+              <div class="signature-image">
+                <img src="{% static 'assets/img/misc/signature-1.webp' %}" alt="" class="img-fluid">
+              </div>
+              <div class="signature-info">
+                <h4>Simon Otieno Omuya</h4>
+                <p>Web Developer | AI Enthusiast | Educator</p>
+              </div>
             </div>
-
-            <!-- Testimonials Card -->
-            <div class="card">
-                <h3>What Others Say</h3>
-                <blockquote class="testimonial">
-                    "An exceptional professional with great attention to detail." – Jackson Kasaine, Snr Principal
-                </blockquote>
-                <blockquote class="testimonial">
-                    "A highly skilled individual with a passion for excellence." – Maurice Owuor, DOS
-                </blockquote>
-            </div>
+          </div>
         </div>
-        <br>
-       <a href="documents/Simon_Otieno_CV.pdf" download class="btn"
-   style="background-color: #FF8200; color: white; padding: 15px 30px; font-size: 16px;
-          text-decoration: none; border-radius: 5px; text-align: center; display: inline-block;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: background-color 0.3s, transform 0.3s;">
-    Download My CV
-</a>
+      </div>
     </div>
-</div>
+  </section><!-- /About Section -->
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row g-4 skills-animation">
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-box">
+            <h3>HTML</h3>
+            <p>Skilled in structuring web pages with semantic HTML to ensure accessibility and SEO optimization.</p>
+            <span class="text-end d-block">90%</span>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-box">
+            <h3>CSS</h3>
+            <p>Experienced in styling responsive and user-friendly websites with CSS, including flexbox and grid layouts.</p>
+            <span class="text-end d-block">85%</span>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-box">
+            <h3>JavaScript</h3>
+            <p>Proficient in building interactive web applications with JavaScript, focusing on user experience and functionality.</p>
+            <span class="text-end d-block">80%</span>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-box">
+            <h3>Python</h3>
+            <p>Strong understanding of Python, especially in the development of AI and machine learning applications.</p>
+            <span class="text-end d-block">75%</span>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+          <div class="skill-box">
+            <h3>Graphic Design</h3>
+            <p>Experience in graphic design, creating logos, resumes, and other visual content for various applications.</p>
+            <span class="text-end d-block">70%</span>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- /Skills Section -->
 {% endblock %}

@@ -1,84 +1,84 @@
-<!-- portfolio_app/templates/contact.html -->
 {% extends 'base.html' %}
 
-{% block title %}Contact Me | My Portfolio{% endblock %}
-
 {% block content %}
+  <!-- Contact Section -->
+  <section id="contact" class="contact section light-background">
 
-        <!-- Header Start -->
-<div class="container-fluid bg-breadcrumb">
-    <div class="container text-center py-5" style="max-width: 900px;">
-        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">
-            {{ page_title|default:"Contact Me" }}
-        </h4>
-        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-primary">Contant Me</li>
-        </ol>
-    </div>
-</div>
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-    <section class="contact-section" style="background: #FFFFFF; color: black; padding: 50px 0;">
-    <div class="container">
-        <div class="contact-header" style="text-align: center; margin-bottom: 30px;">
-            <h1 style="color: black; font-size: 28px;">Contact Me</h1>
-            <p style="text-align: center; font-size: 16px;">I love to hear from you! Reach me out  with any questions, suggestions, or to learn more about how you can get involved.</p>
-        </div><br>
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <div class="content" data-aos="fade-up" data-aos-delay="200">
+            <div class="section-category mb-3">Contact</div>
+            <h2 class="display-5 mb-4">Get in Touch</h2>
+            <p class="lead mb-4">If you have any questions regarding my web development services, AI projects, or tutoring sessions, feel free to reach out!</p>
 
-        <div class="contact-container" style="display: flex; justify-content: space-between; gap: 20px; align-items: flex-start;">
-            <!-- Contact Cards on the Left -->
-            <div class="contact-cards" style="flex: 1; max-width: 40%; display: flex; flex-direction: column; gap: 20px;">
-                <div class="contact-card" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
-                    <h3 style="color: #004080;">My Address</h3>
-                    <p>1957-10101, Karatina, Nyeri, Kenya</p>
-                </div>
-                <div class="contact-card" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
-                    <h3 style="color: #004080;">Email Me</h3>
-                    <p><a href="simonotienoomuya@gmail.com" style="color: #FF8200; text-decoration: none;">simonotienoomuya@gmail.com</a></p>
-                </div>
-                <div class="contact-card" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
-                    <h3 style="color: #004080;">Call Me</h3>
-                    <p>+254 114 159 302</p>
-                </div>
+            <div class="contact-info mt-5">
+              <div class="info-item d-flex mb-3">
+                <i class="bi bi-envelope-at me-3"></i>
+                <span>simonotienoomuya@gmail.com</span>
+              </div>
+
+              <div class="info-item d-flex mb-3">
+                <i class="bi bi-telephone me-3"></i>
+                <span>+254 114 159 302</span>
+              </div>
+
+              <div class="info-item d-flex mb-4">
+                <i class="bi bi-geo-alt me-3"></i>
+                <span>Karatina, Kenya</span>
+              </div>
+
+              <a href="https://goo.gl/maps/XD7hfJ2QyZrF8MkA6" class="map-link d-inline-flex align-items-center" target="_blank">
+                Open Map
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
             </div>
-
-            <!-- Contact Form on the Right -->
-            <div class="contact-form-container" style="flex: 1; max-width: 50%; background: white; padding: 30px; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
-                <h2 class="form-title" style="font-size: 22px; text-align: center; margin-bottom: 15px;">Send Me a Message</h2>
-                <form class="contact-form" method="post">
-                    {% csrf_token %}
-                    <div class="form-group" style="margin-bottom: 15px;">
-                        <label for="{{ form.name.id_for_label }}" style="font-weight: bold; display: block; margin-bottom: 5px;">Your Name</label>
-                        {{ form.name }}
-                    </div>
-                    <div class="form-group" style="margin-bottom: 15px;">
-                        <label for="{{ form.email.id_for_label }}" style="font-weight: bold; display: block; margin-bottom: 5px;">Your Email</label>
-                        {{ form.email }}
-                    </div>
-                    <div class="form-group" style="margin-bottom: 15px;">
-                        <label for="{{ form.subject.id_for_label }}" style="font-weight: bold; display: block; margin-bottom: 5px;">Subject</label>
-                        {{ form.subject }}
-                    </div>
-                    <div class="form-group" style="margin-bottom: 15px;">
-                        <label for="{{ form.message.id_for_label }}" style="font-weight: bold; display: block; margin-bottom: 5px;">Your Message</label>
-                        {{ form.message }}
-                    </div>
-                    <div class="form-group" style="text-align: center;">
-                        <button type="submit" class="btn btn-lg" style="background: #FF8200; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Send Message</button>
-                    </div>
-                </form>
-            </div>
+          </div>
         </div>
 
-        <!-- Google Maps Integration at the Bottom -->
-        <div class="contact-map" style="margin-top: 30px; text-align: center;">
-            <h2 style="font-size: 22px; margin-bottom: 15px;">Find Us on the Map</h2>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.292928581618!2d36.80561222966704!3d-1.2685247999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17235c8e58c5%3A0x6eb6d0a614f007bd!2sWestlands%2C%20Nairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1647872926598!5m2!1sen!2ske"
-                width="100%" height="400" style="border: 0; border-radius: 10px;" allowfullscreen="" loading="lazy">
-            </iframe>
+        <div class="col-lg-6">
+          <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-body p-4 p-lg-5">
+
+              <form action="{% url 'contact' %}" method="post" class="php-email-form">
+                {% csrf_token %}
+                <div class="row gy-4">
+
+                  <div class="col-12">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  </div>
+
+                  <div class="col-12">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  </div>
+
+                  <div class="col-12">
+                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  </div>
+
+                  <div class="col-12">
+                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  </div>
+
+                  <div class="col-12 text-center">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                    <button type="submit" class="btn btn-submit w-100">Submit Message</button>
+                  </div>
+
+                </div>
+              </form>
+
+            </div>
+          </div>
         </div>
+
+      </div>
+
     </div>
-</section><br>
+
+  </section><!-- /Contact Section -->
 {% endblock %}

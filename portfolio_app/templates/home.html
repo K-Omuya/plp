@@ -1,48 +1,37 @@
 {% extends 'base.html' %}
-
-{% block title %}Home | My Portfolio{% endblock %}
 {% load static %}
 {% block content %}
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row align-items-center content">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h2>Crafting Digital Experiences with Passion</h2>
-            <p class="lead">Transforming ideas into elegant solutions through creative design and innovative development</p>
-            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
-              <a href="#portfolio" class="btn btn-primary">View My Work</a>
-              <a href="contact.html" class="btn btn-outline">Let's Connect</a>
-            </div>
-            <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
-              <div class="stat-item">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Years Experience</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">100+</span>
-                <span class="stat-label">Projects Completed</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">50+</span>
-                <span class="stat-label">Happy Clients</span>
-              </div>
-            </div>
+<section id="hero" class="hero section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row align-items-center content">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <h2>Bringing Ideas to Life with Technology</h2>
+        <p class="lead">Merging creativity and innovation to deliver powerful web solutions, AI projects, and educational services.</p>
+        <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+          <a href="{% url 'portfolio' %}" class="btn btn-primary">View My Work</a>
+          <a href="{% url 'contact' %}" class="btn btn-outline">Let's Connect</a>
+        </div>
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+          <div class="stat-item">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Years of Experience</span>
           </div>
-          <div class="col-lg-6">
-            <div class="hero-image">
-              <img src="assets/img/profile/profile-1.webp" alt="Portfolio Hero Image" class="img-fluid" data-aos="zoom-out" data-aos-delay="300">
-              <div class="shape-1"></div>
-              <div class="shape-2"></div>
-            </div>
+          <div class="stat-item">
+            <span class="stat-number">30+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Happy Clients</span>
           </div>
         </div>
-
       </div>
-
-
-
+      <div class="col-lg-6">
+        <div class="hero-image">
+          <img src="{% static 'img/profile/dp.jpeg' %}" alt="My Picture" class="img-fluid" data-aos="zoom-out" data-aos-delay="300">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
